@@ -1,0 +1,12 @@
+#jstimer{
+  Text-align:center;
+}
+
+#clockdiv{
+background-color:#556E3A;
+  display: inline;
+    color: #f3ffe1;
+  justify-content: center;
+  align-items: center; 
+  padding: 10px 15px;
+}

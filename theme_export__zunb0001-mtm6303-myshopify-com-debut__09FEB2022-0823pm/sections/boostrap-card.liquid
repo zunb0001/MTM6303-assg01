@@ -1,0 +1,77 @@
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ section.settings.card_image | image_url: width: 500 }}" alt="{{section.settings.card_image.alt}}">
+  <div class="card-body">
+    <h5 class="card-title"> <strong>{{section.settings.card_text_title}}</strong></h5>
+    <p class="card-text"> {{section.settings.custom_text_body}}</p>
+    <a href="{{section.settings.button_link}}" class="btn btn-primary"><strong>{{section.settings.custom_text_title}}</strong></a>
+</div>
+<style>
+  .card .btn {
+    background-color : {{ section.settings.btn-color}};
+    
+    
+  }
+  .card .card-body{
+  background : {{ section.settings.background-color }};
+  
+  }
+  
+</style>  
+{% schema %}
+{
+    "name": "Bootstrap Card",
+    "tag": "section",
+    "settings": 
+  [{
+            "id": "custom_text_title",
+            "type": "text",
+            "label": "Button Title",
+            "default": "Button Title"
+        },
+  {
+            "id": "card_text_title",
+            "type": "text",
+            "label": "Card Title",
+            "default": "Card Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image"
+        },
+        {
+            "type": "color",
+            "id": "btn-color",
+            "label": "Button Color",
+            "default": "#556E3A"
+        },
+  {
+            "type": "color",
+            "id": "background-color",
+            "label": "Background Color",
+            "default": "#f3ffe1"
+        },
+{
+            "id": "custom_text_body",
+            "type": "richtext",
+            "label": "Banner Text",
+            "default": "<p>Add your text here</p>"
+        },
+  {
+  "type": "url",
+  "id": "button_link",
+  "label": "Button link"
+}
+    ],
+    "presets": [{
+        "name": "Bootstrap Card",
+        "category": "Custom"
+    }]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
